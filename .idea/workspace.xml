@@ -4,29 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e4c0108-fba9-4582-9393-f80000cb98c5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/unit/kmixandblendapplication/Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/unit/kmixandblendapplication/LoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/unit/kmixandblendapplication/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/unit/kmixandblendapplication/SceneController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/unit/kmixandblendapplication/hello-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/unit/kmixandblendapplication/login.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/unit/kmixandblendapplication/main-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/unit/kmixandblendapplication/menu-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/unit/kmixandblendapplication/styleComponents/loginStyle.css" afterDir="false" />
-    </list>
+    <list default="true" id="0e4c0108-fba9-4582-9393-f80000cb98c5" name="Changes" comment="Skeleton for KMIX App" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -99,8 +77,16 @@
       <updated>1653898127575</updated>
       <workItem from="1653898128804" duration="2566000" />
       <workItem from="1653906837277" duration="1799000" />
-      <workItem from="1653908677644" duration="636000" />
+      <workItem from="1653908677644" duration="991000" />
     </task>
+    <task id="LOCAL-00001" summary="Skeleton for KMIX App">
+      <created>1653916062745</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1653916062745</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -116,5 +102,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Skeleton for KMIX App" />
+    <option name="LAST_COMMIT_MESSAGE" value="Skeleton for KMIX App" />
   </component>
 </project>
