@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+
+
+<AnchorPane id="background" prefHeight="400.0" prefWidth="600.0" stylesheets="@styleComponents/loginStyle.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.unit.kmixandblendapplication.LoginController">
+   <children>
+      <Button layoutX="357.0" layoutY="286.0" mnemonicParsing="false" onAction="#successLoginScene" text="Login" />
+      <PasswordField layoutX="255.0" layoutY="243.0" prefHeight="25.0" prefWidth="250.0" />
+      <TextField layoutX="255.0" layoutY="200.0" prefHeight="25.0" prefWidth="250.0" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="305.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Icon.png" />
+         </image>
+      </ImageView>
+      <Rectangle id="gradientBackground" arcHeight="5.0" arcWidth="5.0" height="400.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="150.0">
+         <fill>
+            <LinearGradient endX="0.31060603170683887" endY="1.0" startX="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.7759064435958862" green="0.8943469524383545" blue="0.9789473414421082" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.2561403512954712" green="0.6363157629966736" blue="0.9473684430122375" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+   </children>
+</AnchorPane>
