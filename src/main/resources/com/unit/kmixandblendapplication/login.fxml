@@ -11,12 +11,11 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Rectangle?>
 
-
 <AnchorPane id="background" prefHeight="400.0" prefWidth="600.0" stylesheets="@styleComponents/loginStyle.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.unit.kmixandblendapplication.LoginController">
    <children>
-      <Button layoutX="357.0" layoutY="286.0" mnemonicParsing="false" onAction="#successLoginScene" text="Login" />
-      <PasswordField layoutX="255.0" layoutY="243.0" prefHeight="25.0" prefWidth="250.0" />
-      <TextField layoutX="255.0" layoutY="200.0" prefHeight="25.0" prefWidth="250.0" />
+      <TextField fx:id="txtUser" layoutX="255.0" layoutY="200.0" prefHeight="25.0" prefWidth="250.0" />
+      <PasswordField fx:id="txtPassword" layoutX="255.0" layoutY="243.0" prefHeight="25.0" prefWidth="250.0" />
+      <Button fx:id="loginBtn" layoutX="357.0" layoutY="286.0" mnemonicParsing="false" onAction="#actionLogin" text="Login" />
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="305.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Icon.png" />
