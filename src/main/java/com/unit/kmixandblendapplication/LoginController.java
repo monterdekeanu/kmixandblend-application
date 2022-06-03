@@ -30,6 +30,7 @@ public class LoginController{
         Parent root = FXMLLoader.load(getClass().getResource("dashboard.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
+        stage.setTitle("K - Mix And Blend | Dashboard");
         stage.setScene(scene);
         stage.show();
     }

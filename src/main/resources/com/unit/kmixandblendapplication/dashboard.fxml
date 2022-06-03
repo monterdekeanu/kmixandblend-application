@@ -61,7 +61,7 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Button>
-            <Button fx:id="btnManageProducts" mnemonicParsing="false" onAction="#manageProducts" prefHeight="80.0" prefWidth="150.0" style="-fx-background-color: #1dd1a1;" text="Manage Table" textFill="WHITE">
+            <Button fx:id="btnManageProducts" mnemonicParsing="false" onAction="#manageProducts" prefHeight="80.0" prefWidth="150.0" style="-fx-background-color: #1dd1a1;" text="Manage Products" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
