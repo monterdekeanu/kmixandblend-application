@@ -4,11 +4,17 @@ public class Products {
     private int id;
     private String productName;
 
-    public Products(int id, String productName) {
+    private String productType;
+
+    public Products(int id, String productType, String productName) {
         this.id = id;
         this.productName = productName;
+        this.productType = productType;
     }
 
+    public String getProductType(){
+        return productType;
+    }
     public int getId() {
         return id;
     }

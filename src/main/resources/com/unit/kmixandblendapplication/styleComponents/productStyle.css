@@ -1,0 +1,7 @@
+#productImage{
+    -fx-border-style: solid solid solid solid;
+    -fx-border-width: 3;
+    -fx-border-color: #0097e6;
+    -fx-padding: 0px;
+    -fx-background-color: #fff;
+}

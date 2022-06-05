@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.unit.kmixandblendapplication.ProductsController">
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="518.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.unit.kmixandblendapplication.ProductsController">
    <children>
       <Pane prefHeight="14.0" prefWidth="600.0" style="-fx-background-color: #54a0ff;" />
-      <Label layoutX="26.0" layoutY="32.0" text="Product Name" />
-      <TextField fx:id="txtProductName" layoutX="112.0" layoutY="28.0" prefHeight="25.0" prefWidth="177.0" />
+      <TextField fx:id="txtProductName" layoutX="90.0" layoutY="28.0" prefHeight="25.0" prefWidth="199.0" promptText="Product Name" />
       <Button fx:id="btnAddProduct" layoutX="318.0" layoutY="23.0" mnemonicParsing="false" onAction="#saveProduct" prefHeight="35.0" prefWidth="103.0" style="-fx-background-color: #1dd1a1;" text="ADD" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
@@ -24,10 +28,11 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <TableView fx:id="tableProducts" layoutX="12.0" layoutY="66.0" prefHeight="324.0" prefWidth="576.0">
+      <TableView fx:id="tableProducts" layoutX="317.0" layoutY="66.0" prefHeight="443.0" prefWidth="271.0">
         <columns>
-          <TableColumn fx:id="colId" prefWidth="75.0" text="ID" />
-          <TableColumn fx:id="colProductName" prefWidth="174.0" text="PRODUCT NAME" />
+          <TableColumn fx:id="colId" prefWidth="44.0" text="ID" />
+            <TableColumn fx:id="colProductType" prefWidth="54.0" text="TYPE" />
+          <TableColumn fx:id="colProductName" prefWidth="172.0" text="PRODUCT NAME" />
         </columns>
       </TableView>
       <Button fx:id="btnUpdateProduct" disable="true" layoutX="427.0" layoutY="23.0" mnemonicParsing="false" onAction="#editProduct" prefHeight="35.0" prefWidth="77.0" style="-fx-background-color: #feca57;" text="UPDATE" textFill="WHITE">
@@ -35,5 +40,48 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
+      <ChoiceBox fx:id="cbProductType" layoutX="14.0" layoutY="28.0" prefHeight="25.0" prefWidth="77.0" />
+      <VBox alignment="TOP_CENTER" layoutX="14.0" layoutY="66.0" prefHeight="443.0" prefWidth="271.0" spacing="10.0">
+         <children>
+            <Pane id="productImage" prefHeight="200.0" prefWidth="200.0" stylesheets="@styleComponents/productStyle.css">
+               <children>
+                  <ImageView id="productImage" fitHeight="158.0" fitWidth="251.0" layoutX="1.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </Pane>
+            <Label text="Available Sizes" />
+            <TableView fx:id="tableSize" prefHeight="200.0" prefWidth="200.0">
+              <columns>
+                <TableColumn fx:id="colSizeId" prefWidth="37.0" text="ID" />
+                <TableColumn fx:id="colSize" prefWidth="107.0" text="SIZE" />
+                  <TableColumn fx:id="colPrice" prefWidth="106.0" text="PRICE" />
+              </columns>
+            </TableView>
+            <HBox alignment="TOP_CENTER" prefHeight="23.0" prefWidth="271.0">
+               <children>
+                  <TextField fx:id="txtsize" prefHeight="25.0" prefWidth="96.0" promptText="Size" />
+                  <TextField fx:id="txtprice" prefHeight="25.0" prefWidth="179.0" promptText="Price" />
+               </children>
+            </HBox>
+            <HBox prefHeight="27.0" prefWidth="271.0" spacing="3.0">
+               <children>
+                  <Button fx:id="btnAddSize" mnemonicParsing="false" prefHeight="25.0" prefWidth="106.0" style="-fx-background-color: #1dd1a1;" text="ADD" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Button>
+                  <Button fx:id="btnUpdateSize" mnemonicParsing="false" prefHeight="25.0" prefWidth="69.0" style="-fx-background-color: #feca57;" text="UPDATE" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Button>
+                  <Button fx:id="btnRemoveSize" mnemonicParsing="false" prefHeight="25.0" prefWidth="67.0" style="-fx-background-color: #ff6b6b;" text="REMOVE" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Button>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" />
+         </padding>
+      </VBox>
    </children>
 </AnchorPane>

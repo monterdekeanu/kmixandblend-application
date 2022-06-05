@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e4c0108-fba9-4582-9393-f80000cb98c5" name="Changes" comment="- Product Tables Created&#10;- Dashboard Incomplete">
+    <list default="true" id="0e4c0108-fba9-4582-9393-f80000cb98c5" name="Changes" comment="- Product Tables Created&#10;- Product Edit Created&#10;- Product Remove Created&#10;- Dashboard Incomplete">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/unit/kmixandblendapplication/ProductSize.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/unit/kmixandblendapplication/productDetails.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/unit/kmixandblendapplication/styleComponents/productStyle.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/unit/kmixandblendapplication/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unit/kmixandblendapplication/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unit/kmixandblendapplication/Products.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unit/kmixandblendapplication/Products.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/unit/kmixandblendapplication/ProductsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unit/kmixandblendapplication/ProductsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/unit/kmixandblendapplication/dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/unit/kmixandblendapplication/dashboard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unit/kmixandblendapplication/SceneController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/unit/kmixandblendapplication/products.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/unit/kmixandblendapplication/products.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -19,8 +22,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="FxmlFile" />
+        <option value="CSS File" />
         <option value="Class" />
       </list>
     </option>
@@ -58,6 +61,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\user\IdeaProjects\kmixandblendApplication\src\main\resources\com\unit\kmixandblendapplication\styleComponents" />
       <recent name="C:\Users\user\IdeaProjects\kmixandblendApplication\src\main\resources\com\unit\kmixandblendapplication" />
       <recent name="C:\Users\user\IdeaProjects\kmixandblendApplication\src\main\resources\com\unit\kmixandblendapplication\sceneDir_" />
     </key>
@@ -99,6 +103,9 @@
       <workItem from="1654137643026" duration="3227000" />
       <workItem from="1654143754534" duration="15206000" />
       <workItem from="1654225602108" duration="5792000" />
+      <workItem from="1654270909386" duration="186000" />
+      <workItem from="1654399435025" duration="4561000" />
+      <workItem from="1654410687404" duration="7485000" />
     </task>
     <task id="LOCAL-00001" summary="Skeleton for KMIX App">
       <created>1653916062745</created>
@@ -128,7 +135,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654170953958</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="- Product Tables Created&#10;- Product Edit Created&#10;- Product Remove Created&#10;- Dashboard Incomplete">
+      <created>1654271088393</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1654271088393</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -148,6 +162,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Skeleton for KMIX App" />
     <MESSAGE value="- Product Tables Created&#10;- Dashboard Incomplete" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Product Tables Created&#10;- Dashboard Incomplete" />
+    <MESSAGE value="- Product Tables Created&#10;- Product Edit Created&#10;- Product Remove Created&#10;- Dashboard Incomplete" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Product Tables Created&#10;- Product Edit Created&#10;- Product Remove Created&#10;- Dashboard Incomplete" />
   </component>
 </project>
