@@ -64,15 +64,15 @@
             </HBox>
             <HBox prefHeight="27.0" prefWidth="271.0" spacing="3.0">
                <children>
-                  <Button fx:id="btnAddSize" mnemonicParsing="false" prefHeight="25.0" prefWidth="106.0" style="-fx-background-color: #1dd1a1;" text="ADD" textFill="WHITE">
+                  <Button fx:id="btnAddSize" disable="true" mnemonicParsing="false" onAction="#saveProductSize" prefHeight="25.0" prefWidth="106.0" style="-fx-background-color: #1dd1a1;" text="ADD" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font></Button>
-                  <Button fx:id="btnUpdateSize" mnemonicParsing="false" prefHeight="25.0" prefWidth="69.0" style="-fx-background-color: #feca57;" text="UPDATE" textFill="WHITE">
+                  <Button fx:id="btnUpdateSize" disable="true" mnemonicParsing="false" prefHeight="25.0" prefWidth="69.0" style="-fx-background-color: #feca57;" text="UPDATE" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font></Button>
-                  <Button fx:id="btnRemoveSize" mnemonicParsing="false" prefHeight="25.0" prefWidth="67.0" style="-fx-background-color: #ff6b6b;" text="REMOVE" textFill="WHITE">
+                  <Button fx:id="btnRemoveSize" disable="true" mnemonicParsing="false" prefHeight="25.0" prefWidth="67.0" style="-fx-background-color: #ff6b6b;" text="REMOVE" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font></Button>

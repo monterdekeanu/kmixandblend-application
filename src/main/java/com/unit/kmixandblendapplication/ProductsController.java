@@ -9,6 +9,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import org.controlsfx.control.action.Action;
 
 import javax.xml.transform.Result;
 import java.net.URL;
@@ -23,6 +24,10 @@ public class ProductsController implements Initializable {
     @FXML
     public ChoiceBox cbProductType;
     @FXML
+    public TextField txtprice;
+    @FXML
+    public TextField txtsize;
+    @FXML
     public TextField txtProductName;
     @FXML
     public Button btnAddProduct;
@@ -34,6 +39,12 @@ public class ProductsController implements Initializable {
     public TableView<ProductSize> tableSize;
     @FXML
     public Button btnUpdateProduct;
+    @FXML
+    public Button btnAddSize;
+    @FXML
+    public Button btnUpdateSize;
+    @FXML
+    public Button btnRemoveSize;
     @FXML
     public TableColumn<ProductSize,Integer> colSizeId;
     @FXML
@@ -69,6 +80,18 @@ public class ProductsController implements Initializable {
         colSize.setCellValueFactory(new PropertyValueFactory<ProductSize,String>("size"));
         colPrice.setCellValueFactory(new PropertyValueFactory<ProductSize,Double>("price"));
         tableSize.setItems(list);
+    }
+    private void insertProductSize(){
+        String productSize = txtsize.getText();
+        double productPrice = Double.parseDouble(txtprice.getText());
+        if(!productSize.isEmpty() && productPrice >= 0.0){
+            String query = "INSERT INTO `" + txtProductName.getText() + "` (size,price) VALUES ('" +productSize +"','" +productPrice+"')";
+            executeQuery(query);
+        }
+        showProductSize();
+        txtprice.setText("");
+        txtsize.setText("");
+
     }
     private void insertProduct(){
         String productName = txtProductName.getText();
@@ -177,24 +200,27 @@ public class ProductsController implements Initializable {
 
     }
 
-    private void displayProductSize(){
-
-    }
     private void addListenerTable(){
         tableProducts.getSelectionModel().selectedItemProperty().addListener((obs,oldSelection,newSelection)->{
             if(newSelection!=null){
                 btnRemoveProduct.setDisable(false);
                 btnUpdateProduct.setDisable(false);
+                btnAddSize.setDisable(false);
                 txtProductName.setText(newSelection.getProductName());
                 cbProductType.setValue(newSelection.getProductType());
                 showProductSize();
             }else{
                 txtProductName.setText("");
+                btnAddSize.setDisable(true);
                 btnRemoveProduct.setDisable(true);
                 btnUpdateProduct.setDisable(true);
             }
         });
+    }
 
+    @FXML
+    private void saveProductSize(ActionEvent event){
+        insertProductSize();
     }
     @FXML
     private void saveProduct(ActionEvent event){
