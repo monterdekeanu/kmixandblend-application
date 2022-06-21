@@ -11,7 +11,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Rectangle?>
 
-<AnchorPane id="background" prefHeight="400.0" prefWidth="600.0" stylesheets="@styleComponents/loginStyle.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.unit.kmixandblendapplication.LoginController">
+<AnchorPane id="background" prefHeight="400.0" prefWidth="600.0" stylesheets="@styleComponents/loginStyle.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.unit.kmixandblendapplication.LoginController">
    <children>
       <TextField fx:id="txtUser" layoutX="255.0" layoutY="200.0" prefHeight="25.0" prefWidth="250.0" />
       <PasswordField fx:id="txtPassword" layoutX="255.0" layoutY="243.0" prefHeight="25.0" prefWidth="250.0" />

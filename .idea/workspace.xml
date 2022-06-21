@@ -1,12 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="kmixandblendApplication:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e4c0108-fba9-4582-9393-f80000cb98c5" name="Changes" comment="- Product Sizes Added&#10;- Modified Manage Products UI">
+    <list default="true" id="0e4c0108-fba9-4582-9393-f80000cb98c5" name="Changes" comment="- Product Sizes Button Method Working">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/kmixandblendApplication_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/unit/kmixandblendapplication/Executable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unit/kmixandblendapplication/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unit/kmixandblendapplication/DashboardController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/unit/kmixandblendapplication/ProductsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unit/kmixandblendapplication/ProductsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/unit/kmixandblendapplication/dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/unit/kmixandblendapplication/dashboard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/unit/kmixandblendapplication/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/unit/kmixandblendapplication/login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/unit/kmixandblendapplication/productDetails.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/unit/kmixandblendapplication/productDetails.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/unit/kmixandblendapplication/products.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/unit/kmixandblendapplication/products.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -37,16 +52,21 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;last_directory_selection&quot;: &quot;C:/Users/user/IdeaProjects/kmixandblendApplication/src/main/resources/com/unit/kmixandblendapplication&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Program Files (x86)/MySQL/Connector J 8.0/mysql-connector-java-8.0.29.jar&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/Documents/SDK/javafx-sdk-11/lib&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.33678162&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propCompiler&quot;
   },
   &quot;keyToStringList&quot;: {
     &quot;DatabaseDriversLRU&quot;: [
@@ -103,7 +123,15 @@
       <workItem from="1654410687404" duration="7611000" />
       <workItem from="1654506590509" duration="187000" />
       <workItem from="1654514486496" duration="108000" />
-      <workItem from="1654526373595" duration="806000" />
+      <workItem from="1654526373595" duration="1217000" />
+      <workItem from="1654578695113" duration="3751000" />
+      <workItem from="1655719718540" duration="3404000" />
+      <workItem from="1655723921453" duration="230000" />
+      <workItem from="1655777919272" duration="773000" />
+      <workItem from="1655778709337" duration="1862000" />
+      <workItem from="1655788429523" duration="1823000" />
+      <workItem from="1655790282065" duration="2376000" />
+      <workItem from="1655800798357" duration="952000" />
     </task>
     <task id="LOCAL-00001" summary="Skeleton for KMIX App">
       <created>1653916062745</created>
@@ -147,7 +175,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654436359518</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="- Product Sizes Button Method Working">
+      <created>1654527589814</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1654527589814</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -169,6 +204,11 @@
     <MESSAGE value="- Product Tables Created&#10;- Dashboard Incomplete" />
     <MESSAGE value="- Product Tables Created&#10;- Product Edit Created&#10;- Product Remove Created&#10;- Dashboard Incomplete" />
     <MESSAGE value="- Product Sizes Added&#10;- Modified Manage Products UI" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Product Sizes Added&#10;- Modified Manage Products UI" />
+    <MESSAGE value="- Product Sizes Button Method Working" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Product Sizes Button Method Working" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

@@ -1,6 +1,7 @@
 package com.unit.kmixandblendapplication;
 
 import javafx.beans.Observable;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.scene.control.ChoiceBox;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -9,9 +10,17 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.stage.FileChooser;
 import org.controlsfx.control.action.Action;
+import org.controlsfx.control.tableview2.filter.filtereditor.SouthFilter;
 
+import javax.imageio.ImageIO;
+import javax.swing.*;
 import javax.xml.transform.Result;
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -21,6 +30,8 @@ import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class ProductsController implements Initializable {
+
+    File file;
     @FXML
     public ChoiceBox cbProductType;
     @FXML
@@ -56,12 +67,38 @@ public class ProductsController implements Initializable {
     @FXML
     public TableColumn<Products,Integer> colId;
     @FXML
+    public Button btnSave;
+    @FXML
     public TableColumn<Products,String> colProductName;
+
 
     JDBCObject jdbcObject;
 
+    @FXML
+    public Button btnBrowse;
+    @FXML
+    public ImageView ivProducts;
+    @FXML
+    private void handleBrowseImage(ActionEvent event){
+        try{
+            FileChooser fc = new FileChooser();
+            FileChooser.ExtensionFilter ext1 = new FileChooser.ExtensionFilter("JPG files(*.jpg)", "*.JPG"); // FILTER TO ACCEPT EXTENSIONS
+            FileChooser.ExtensionFilter ext2 = new FileChooser.ExtensionFilter("PNG files(*.png)", "*.PNG");
+
+            fc.getExtensionFilters().addAll(ext1,ext2);
+
+            file = fc.showOpenDialog(DashboardController.getPrimaryStage());
+
+            BufferedImage bf;
+            bf = ImageIO.read(file);
+            Image image = SwingFXUtils.toFXImage(bf,null);
+            ivProducts.setImage(image);
+        }catch(Exception ex){
+            System.out.println(" " + ex.getMessage());
+        }
+    }
     public void displayProductTypes(){
-        String[] prodTypes = {"DRINK","FOOD"};
+        String[] prodTypes = {"DRINK","FOOD","COMBO"};
         for(String type: prodTypes){
             cbProductType.getItems().add(type);
         }
@@ -163,7 +200,20 @@ public class ProductsController implements Initializable {
             ex.printStackTrace();
         }
     }
-
+    @FXML
+    private void removeProductSize(){
+        Connection conn = jdbcObject.getConnection();
+        try{
+            ProductSize productSize = tableSize.getSelectionModel().getSelectedItem();
+            String query = "DELETE FROM " + txtProductName.getText() + " WHERE id = '"+productSize.getId()+"'";
+            executeQuery(query);
+            query = "ALTER TABLE "+txtProductName.getText()+" AUTO_INCREMENT = 1";
+            executeQuery(query);
+            showProductSize();
+        }catch(Exception err){
+            System.out.println(err.getMessage());
+        }
+    }
     @FXML
     private void removeProduct(){
         Connection conn = jdbcObject.getConnection();
@@ -178,6 +228,22 @@ public class ProductsController implements Initializable {
             showProducts();
         }catch(Exception ex){
             System.out.println(ex.getMessage());
+        }
+    }
+
+    @FXML
+    private void editProductSize(ActionEvent event){
+        Connection conn = jdbcObject.getConnection();
+        if(!txtprice.getText().isEmpty() && !txtsize.getText().isEmpty()){
+            try{
+                ProductSize productSize = tableSize.getSelectionModel().getSelectedItem();
+                String query = "UPDATE " + txtProductName.getText() + " SET size = '" + txtsize.getText()+"', price = '" + txtprice.getText() + "' WHERE id = '" +productSize.getId()+"'" ;
+                executeQuery(query);
+                showProductSize();
+            }catch(Exception exception){
+                System.out.println(exception.getMessage());
+            }
+
         }
     }
     @FXML
@@ -197,6 +263,22 @@ public class ProductsController implements Initializable {
                 System.out.println(ex.getMessage());
             }
         }
+    }
+
+    private void addSizeProductListener(){
+        tableSize.getSelectionModel().selectedItemProperty().addListener((obs,oldSelection,newSelection) ->{
+            if(newSelection != null){
+                btnRemoveSize.setDisable(false);
+                btnUpdateSize.setDisable(false);
+                txtsize.setText(newSelection.getSize());
+                txtprice.setText(String.valueOf(newSelection.getPrice()));
+            }else{
+                txtprice.setText("");
+                txtsize.setText("");
+                btnRemoveSize.setDisable(true);
+                btnUpdateSize.setDisable(true);
+            }
+        });
 
     }
 
@@ -206,6 +288,8 @@ public class ProductsController implements Initializable {
                 btnRemoveProduct.setDisable(false);
                 btnUpdateProduct.setDisable(false);
                 btnAddSize.setDisable(false);
+                btnBrowse.setDisable(false);
+                btnSave.setDisable(false);
                 txtProductName.setText(newSelection.getProductName());
                 cbProductType.setValue(newSelection.getProductType());
                 showProductSize();
@@ -214,6 +298,8 @@ public class ProductsController implements Initializable {
                 btnAddSize.setDisable(true);
                 btnRemoveProduct.setDisable(true);
                 btnUpdateProduct.setDisable(true);
+                btnSave.setDisable(true);
+                btnBrowse.setDisable(true);
             }
         });
     }
@@ -230,6 +316,7 @@ public class ProductsController implements Initializable {
     public void initialize(URL url, ResourceBundle rb){
         jdbcObject = new JDBCObject();
         displayProductTypes();
+        addSizeProductListener();
         addListenerTable();
         showProducts();
     }

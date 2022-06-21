@@ -17,7 +17,7 @@ public class DashboardController {
     private Button btnAddTable;
     @FXML
     private Button btnManageProducts;
-
+    private static Stage pStage;
 
     Scene fxmlFile;
     Parent root;
@@ -31,6 +31,15 @@ public class DashboardController {
         }
     }
 
+    private void setPrimaryStage(Stage pStage){
+        DashboardController.pStage = pStage;
+    }
+
+    static Stage getPrimaryStage(){
+        return pStage;
+    }
+
+
     private void openModalWindow(String resource, String title) throws IOException {
         System.out.println("WORKING");
         root = FXMLLoader.load(getClass().getResource(resource));
@@ -42,7 +51,11 @@ public class DashboardController {
         window.setIconified(false);
 //        window.initStyle(StageStyle.UNDECORATED);
         window.setTitle(title);
+        setPrimaryStage(window);
         window.showAndWait();
     }
+
+
+
 
 }
