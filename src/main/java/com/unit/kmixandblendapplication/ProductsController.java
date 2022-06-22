@@ -13,6 +13,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
+import javafx.stage.Modality;
+import javafx.stage.Window;
 import org.controlsfx.control.action.Action;
 import org.controlsfx.control.tableview2.filter.filtereditor.SouthFilter;
 
@@ -21,11 +23,10 @@ import javax.swing.*;
 import javax.xml.transform.Result;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
@@ -78,6 +79,21 @@ public class ProductsController implements Initializable {
     public Button btnBrowse;
     @FXML
     public ImageView ivProducts;
+
+    private void saveImage(BufferedImage bf) throws IOException {
+        File outputFile = new File(this.getClass().getResource("Image/").getPath()+txtProductName.getText() + ".jpg");
+        ImageIO.write(bf,"jpg",outputFile);
+    }
+
+    public static void showAlert(Alert.AlertType alertType, Window owner, String message, String title){
+        Alert alert = new Alert(alertType);
+        alert.setContentText(message);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.initModality(Modality.APPLICATION_MODAL);
+        alert.initOwner(owner);
+        alert.showAndWait();
+    }
     @FXML
     private void handleBrowseImage(ActionEvent event){
         try{
@@ -93,6 +109,7 @@ public class ProductsController implements Initializable {
             bf = ImageIO.read(file);
             Image image = SwingFXUtils.toFXImage(bf,null);
             ivProducts.setImage(image);
+            saveImage(bf);
         }catch(Exception ex){
             System.out.println(" " + ex.getMessage());
         }
@@ -292,6 +309,13 @@ public class ProductsController implements Initializable {
                 btnSave.setDisable(false);
                 txtProductName.setText(newSelection.getProductName());
                 cbProductType.setValue(newSelection.getProductType());
+                try{
+                    ivProducts.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("Image/" + newSelection.getProductName() + ".jpg"))));
+                }catch(Exception ex){
+                    System.out.println("" + ex.getMessage());
+                    ivProducts.setImage(new Image(getClass().getResourceAsStream("Image/noimage.jpg")));
+                }
+
                 showProductSize();
             }else{
                 txtProductName.setText("");
