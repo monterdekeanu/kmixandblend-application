@@ -26,6 +26,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URL;
+import java.nio.file.Path;
 import java.sql.*;
 import java.util.Objects;
 import java.util.ResourceBundle;
@@ -81,7 +82,7 @@ public class ProductsController implements Initializable {
     public ImageView ivProducts;
 
     private void saveImage(BufferedImage bf) throws IOException {
-        File outputFile = new File(this.getClass().getResource("Image/").getPath()+txtProductName.getText() + ".jpg");
+        File outputFile = new File("./assets/productImage/" + txtProductName.getText() + ".jpg");
         ImageIO.write(bf,"jpg",outputFile);
     }
 
@@ -100,15 +101,16 @@ public class ProductsController implements Initializable {
             FileChooser fc = new FileChooser();
             FileChooser.ExtensionFilter ext1 = new FileChooser.ExtensionFilter("JPG files(*.jpg)", "*.JPG"); // FILTER TO ACCEPT EXTENSIONS
             FileChooser.ExtensionFilter ext2 = new FileChooser.ExtensionFilter("PNG files(*.png)", "*.PNG");
-
             fc.getExtensionFilters().addAll(ext1,ext2);
-
             file = fc.showOpenDialog(DashboardController.getPrimaryStage());
-
             BufferedImage bf;
             bf = ImageIO.read(file);
-            Image image = SwingFXUtils.toFXImage(bf,null);
-            ivProducts.setImage(image);
+            try{
+                Image image = SwingFXUtils.toFXImage(bf,null);
+                ivProducts.setImage(image);
+            }catch(Exception ex){
+                System.out.println(ex.getMessage());
+            }
             saveImage(bf);
         }catch(Exception ex){
             System.out.println(" " + ex.getMessage());
@@ -310,10 +312,14 @@ public class ProductsController implements Initializable {
                 txtProductName.setText(newSelection.getProductName());
                 cbProductType.setValue(newSelection.getProductType());
                 try{
-                    ivProducts.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("Image/" + newSelection.getProductName() + ".jpg"))));
+                    file = new File("./assets/productImage/" + newSelection.getProductName() + ".jpg");
+                    ivProducts.setImage(new Image(file.toURI().toString()));
+                    if(!file.exists()){
+                        ivProducts.setImage(new Image(getClass().getResourceAsStream("Image/noimage.jpg")));
+                    }
                 }catch(Exception ex){
                     System.out.println("" + ex.getMessage());
-                    ivProducts.setImage(new Image(getClass().getResourceAsStream("Image/noimage.jpg")));
+
                 }
 
                 showProductSize();

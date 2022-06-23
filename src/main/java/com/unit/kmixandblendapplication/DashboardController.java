@@ -10,6 +10,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import java.io.File;
 import java.io.IOException;
 
 public class DashboardController {
@@ -56,6 +57,10 @@ public class DashboardController {
     }
 
 
+    private void displayProdBtn(){
 
+    }
+    private void generateBtn(){
 
+    }
 }

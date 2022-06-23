@@ -3,6 +3,7 @@ package com.unit.kmixandblendapplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Node;
 import javafx.scene.Scene;
@@ -13,9 +14,12 @@ import javafx.stage.Window;
 import org.controlsfx.control.action.Action;
 import org.w3c.dom.Text;
 
+import java.io.File;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class LoginController{
+public class LoginController implements Initializable{
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -80,5 +84,16 @@ public class LoginController{
         alert.show();
     }
 
+    private void createDir(){
+        File file = new File("assets\\productImage\\");
+        boolean dirCreated = file.mkdirs();
+        if(dirCreated){
+            System.out.println("Directory does not exist... Creating Directory..");
+        }
+    }
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        createDir();
+    }
 }
