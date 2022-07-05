@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="518.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.unit.kmixandblendapplication.ProductsController">
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="518.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.unit.kmixandblendapplication.ProductsController">
    <children>
       <Pane prefHeight="14.0" prefWidth="600.0" style="-fx-background-color: #54a0ff;" />
       <TextField fx:id="txtProductName" layoutX="90.0" layoutY="28.0" prefHeight="25.0" prefWidth="199.0" promptText="Product Name" />

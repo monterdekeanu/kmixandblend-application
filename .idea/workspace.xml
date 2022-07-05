@@ -9,12 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e4c0108-fba9-4582-9393-f80000cb98c5" name="Changes" comment="- Product Image Added (Working on Compiler but not working on artifact)">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/kmixandblendApplication_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/kmixandblendApplication_jar.xml" afterDir="false" />
+    <list default="true" id="0e4c0108-fba9-4582-9393-f80000cb98c5" name="Changes" comment="- Dashboard Product Generation Added (Needs proper design)">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/unit/kmixandblendapplication/Orders.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/unit/kmixandblendapplication/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unit/kmixandblendapplication/DashboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/unit/kmixandblendapplication/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unit/kmixandblendapplication/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/unit/kmixandblendapplication/ProductsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unit/kmixandblendapplication/ProductsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/unit/kmixandblendapplication/dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/unit/kmixandblendapplication/dashboard.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/unit/kmixandblendapplication/products.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/unit/kmixandblendapplication/products.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -43,30 +42,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_directory_selection": "C:/Users/user/IdeaProjects/kmixandblendApplication/src/main/resources/com/unit/kmixandblendapplication",
-    "last_opened_file_path": "C:/Users/user/Documents/SDK/javafx-sdk-11/bin/vcruntime140.dll",
-    "list.type.of.created.stylesheet": "CSS",
-    "project.structure.last.edited": "Artifacts",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.33678162",
-    "settings.editor.selected.configurable": "project.propCompiler"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/Users/user/IdeaProjects/kmixandblendApplication/src/main/resources/com/unit/kmixandblendapplication&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/Documents/SDK/javafx-sdk-11/bin/vcruntime140.dll&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.33678162&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propCompiler&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "redshift"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;redshift&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\user\IdeaProjects\kmixandblendApplication\src\main\resources\com\unit\kmixandblendapplication\styleComponents" />
@@ -128,7 +127,14 @@
       <workItem from="1655862461507" duration="2882000" />
       <workItem from="1655891522837" duration="6821000" />
       <workItem from="1655907916072" duration="109000" />
-      <workItem from="1655965840575" duration="8126000" />
+      <workItem from="1655965840575" duration="8186000" />
+      <workItem from="1656061052025" duration="659000" />
+      <workItem from="1656119894618" duration="1082000" />
+      <workItem from="1656204319311" duration="10441000" />
+      <workItem from="1656293078332" duration="3834000" />
+      <workItem from="1656380210089" duration="2316000" />
+      <workItem from="1656901406018" duration="600000" />
+      <workItem from="1656984509642" duration="5403000" />
     </task>
     <task id="LOCAL-00001" summary="Skeleton for KMIX App">
       <created>1653916062745</created>
@@ -193,7 +199,21 @@
       <option name="project" value="LOCAL" />
       <updated>1655908015340</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="- Product Image working&#10;&#10;Next:&#10;- Product Button Generation in Dashboard">
+      <created>1655976882383</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1655976882383</updated>
+    </task>
+    <task id="LOCAL-00011" summary="- Dashboard Product Generation Added (Needs proper design)">
+      <created>1656224586565</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1656224586565</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -218,7 +238,9 @@
     <MESSAGE value="- Product Sizes Button Method Working" />
     <MESSAGE value="-Product ImageView Added (Products.FXML)&#10;&#10;Product.FXML&#10;- Browse Button&#10;- Browse Save&#10;&#10;Products Controller&#10;- handleBrowseImage method&#10;&#10;Next&#10;- save image method" />
     <MESSAGE value="- Product Image Added (Working on Compiler but not working on artifact)" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Product Image Added (Working on Compiler but not working on artifact)" />
+    <MESSAGE value="- Product Image working&#10;&#10;Next:&#10;- Product Button Generation in Dashboard" />
+    <MESSAGE value="- Dashboard Product Generation Added (Needs proper design)" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Dashboard Product Generation Added (Needs proper design)" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
