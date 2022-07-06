@@ -187,6 +187,7 @@ public class DashboardController implements Initializable {
         button.setAlignment(Pos.CENTER);
         button.setOnAction(e -> {
             displayOrders(txtProductName.getText());
+            updateTotal();
         });
         return button;
     }
@@ -252,7 +253,19 @@ public class DashboardController implements Initializable {
     private void clearOrders(){
         ordersList.clear();
         tvOrders.setItems(ordersList);
+        updateTotal();
     }
+
+    @FXML
+    public Label labelTotal;
+    private void updateTotal(){
+        double total = 0;
+        for(Orders order: ordersList){
+            total += order.getTotal();
+        }
+        labelTotal.setText(String.valueOf(total));
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 //        getProducts();

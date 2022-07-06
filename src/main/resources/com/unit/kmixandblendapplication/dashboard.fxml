@@ -21,9 +21,9 @@
    <right>
       <VBox prefHeight="500.0" prefWidth="259.0" spacing="10.0" style="-fx-background-color: #c8d6e5;" BorderPane.alignment="CENTER">
          <children>
-            <Pane prefHeight="50.0" prefWidth="259.0">
+            <Pane prefHeight="50.0" prefWidth="259.0" style="-fx-background-color: #000000;">
                <children>
-                  <Label layoutX="180.0" layoutY="8.0" text="0.00" textAlignment="RIGHT" textFill="#54a0ff">
+                  <Label fx:id="labelTotal" alignment="CENTER_RIGHT" layoutX="9.0" layoutY="8.0" prefHeight="35.0" prefWidth="223.0" text="0.00" textAlignment="RIGHT" textFill="#00ff1e">
                      <font>
                         <Font size="24.0" />
                      </font>
