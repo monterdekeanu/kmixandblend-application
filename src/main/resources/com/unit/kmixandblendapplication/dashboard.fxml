@@ -19,7 +19,7 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.unit.kmixandblendapplication.DashboardController">
    <right>
-      <VBox prefHeight="500.0" prefWidth="259.0" spacing="10.0" style="-fx-background-color: #c8d6e5;" BorderPane.alignment="CENTER">
+      <VBox prefHeight="479.0" prefWidth="290.0" spacing="10.0" style="-fx-background-color: #c8d6e5;" BorderPane.alignment="CENTER">
          <children>
             <Pane prefHeight="50.0" prefWidth="259.0" style="-fx-background-color: #000000;">
                <children>
@@ -32,10 +32,10 @@
             </Pane>
             <TableView fx:id="tvOrders" nodeOrientation="LEFT_TO_RIGHT" prefHeight="236.0" prefWidth="259.0">
               <columns>
-                  <TableColumn fx:id="colProduct" prefWidth="75.0" text="PRODUCT" />
-                <TableColumn fx:id="colQty" prefWidth="36.0" text="QTY" />
-                <TableColumn fx:id="colPrice" prefWidth="57.0" text="PRICE" />
-                  <TableColumn fx:id="colTotal" prefWidth="69.0" text="TOTAL" />
+                  <TableColumn fx:id="colProduct" prefWidth="140.00000035762787" text="PRODUCT" />
+                <TableColumn fx:id="colQty" minWidth="8.0" prefWidth="34.4000244140625" text="QTY" />
+                <TableColumn fx:id="colPrice" prefWidth="48.0" text="PRICE" />
+                  <TableColumn fx:id="colTotal" prefWidth="47.9998779296875" text="TOTAL" />
               </columns>
             </TableView>
          </children>

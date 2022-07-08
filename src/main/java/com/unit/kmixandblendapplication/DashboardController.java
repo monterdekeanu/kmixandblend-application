@@ -6,7 +6,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.HPos;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -19,17 +18,12 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
-import javax.swing.*;
-import javax.swing.plaf.nimbus.State;
-import javax.swing.text.Element;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
@@ -43,12 +37,14 @@ public class DashboardController implements Initializable {
     @FXML
     private Button btnDisplayDrinks;
     private static Stage pStage;
-
-
+    private static String currentOrder;
     ArrayList<Products> productsArrayList;
     Scene fxmlFile;
     Parent root;
     Stage window;
+    public String getCurrentOrder(){
+        return currentOrder;
+    }
     @FXML
     private void manageProducts(ActionEvent event){
         try{
@@ -57,7 +53,13 @@ public class DashboardController implements Initializable {
 
         }
     }
+    private void sizeSelection(String productName){
+        try{
+            openModalWindow("sizeboard.fxml","Size Selection");
+        }catch(Exception ex){
 
+        }
+    }
     private void setPrimaryStage(Stage pStage){
         DashboardController.pStage = pStage;
     }
@@ -141,27 +143,7 @@ public class DashboardController implements Initializable {
 
         }
     }
-    private int getTotalProducts(){
-        JDBCObject jdbcObject = new JDBCObject();
-        int total=0;
-        Connection conn = jdbcObject.getConnection();
-        String query = "SELECT * FROM tblproducts";
-        Statement statement;
-        ResultSet resultSet;
-        try{
-            statement = conn.createStatement();
-            resultSet = statement.executeQuery(query);
-            while(resultSet.next()){
-                total++;
-            }
-        }catch (Exception ex){
-            System.out.println(ex.getMessage());
-        }
-        return total;
-    }
-    private void displayProdBtn(){
 
-    }
     private Button generateBtn(String productName){
         File file = new File("./assets/productImage/" + productName + ".jpg");
         ImageView ivProducts = new ImageView();
@@ -185,8 +167,14 @@ public class DashboardController implements Initializable {
         button.setMinWidth(110);
         button.setPrefWidth(100);
         button.setAlignment(Pos.CENTER);
+
         button.setOnAction(e -> {
-            displayOrders(txtProductName.getText());
+            try{
+                currentOrder = txtProductName.getText();
+                openModalWindow("sizeboard.fxml","Size Selection");
+                displayOrders();
+            }catch(Exception ex){
+            }
             updateTotal();
         });
         return button;
@@ -202,9 +190,9 @@ public class DashboardController implements Initializable {
     public TableColumn<Orders,Double> colPrice;
     @FXML
     public TableColumn<Orders,Double> colTotal;
-    ObservableList<Orders> ordersList = FXCollections.observableArrayList();
+    public static ObservableList<Orders> ordersList = FXCollections.observableArrayList();
 
-    private void generateOrder(String productName){
+    public void generateOrder(String productName,String prodSize){
         JDBCObject jdbcObject = new JDBCObject();
         Orders orders;
 //        orders = new Orders(productName,1,75.25,100);
@@ -216,19 +204,19 @@ public class DashboardController implements Initializable {
             statement = conn.createStatement();
             resultSet = statement.executeQuery(query);
             while(resultSet.next()){
-                if(resultSet.getString("size").equals("REGULAR")){
+                if(resultSet.getString("size").equals(prodSize)){
                     boolean found = false;
                     int index = 0;
                     for(Orders order : ordersList){
-                        if(order.getProductName().equals(productName)){
-                            orders = new Orders(productName,order.getQuantity() + 1,order.getPrice(),order.getTotal() + resultSet.getDouble("price"));
+                        if(order.getProductName().equals(productName + "("+prodSize+")")){
+                            orders = new Orders(productName + "("+prodSize+")",order.getQuantity() + 1,order.getPrice(),order.getTotal() + resultSet.getDouble("price"));
                             found = true;
                             ordersList.set(index,orders);
                         }
                         index++;
                     }
                     if(!found){
-                        orders = new Orders(productName,1,resultSet.getDouble("price"),resultSet.getDouble("price"));
+                        orders = new Orders(productName + "("+prodSize+")",1,resultSet.getDouble("price"),resultSet.getDouble("price"));
                         ordersList.add(orders);
                     }
 
@@ -240,8 +228,7 @@ public class DashboardController implements Initializable {
     }
 
 
-    private void displayOrders(String productName){
-        generateOrder(productName);
+    public void displayOrders(){
         colProduct.setCellValueFactory(new PropertyValueFactory<Orders, String>("productName"));
         colPrice.setCellValueFactory(new PropertyValueFactory<Orders, Double>("price"));
         colQty.setCellValueFactory(new PropertyValueFactory<Orders, Integer>("quantity"));
