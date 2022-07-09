@@ -227,7 +227,6 @@ public class DashboardController implements Initializable {
         }
     }
 
-
     public void displayOrders(){
         colProduct.setCellValueFactory(new PropertyValueFactory<Orders, String>("productName"));
         colPrice.setCellValueFactory(new PropertyValueFactory<Orders, Double>("price"));

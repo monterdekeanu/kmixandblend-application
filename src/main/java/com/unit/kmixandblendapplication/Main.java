@@ -17,6 +17,7 @@ public class Main extends Application {
         stage.setScene(scene);
         stage.getIcons().add(new Image(Main.class.getResourceAsStream("Icon.png")));
         stage.show();
+        stage.centerOnScreen();
     }
 
     public static void main(String[] args) {
