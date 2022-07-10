@@ -18,12 +18,14 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.Window;
 
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
@@ -251,6 +253,44 @@ public class DashboardController implements Initializable {
         }
         labelTotal.setText(String.valueOf(total));
     }
+    @FXML
+    private void confirmOrder(){
+        if(!ordersList.isEmpty()){
+            executeOrder();
+        }
+
+    }
+
+    private void executeOrder(){
+        JDBCObject jdbcObject = new JDBCObject();
+        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+        Date date = timestamp;
+        for(Orders order: ordersList){
+            try{
+                String query = "INSERT INTO `transaction_log` (timestamp,productName,quantity,price,total) VALUES ('"+date+"','"+order.getProductName()+"','"+order.getQuantity()+"','"+order.getPrice()+"','"+order.getTotal()+"')";
+                Connection connection = jdbcObject.getConnection();
+                Statement statement = connection.createStatement();
+                statement.executeUpdate(query);
+            }catch(Exception ex){
+                System.out.println(ex.getMessage());
+            }
+        }
+
+        showAlert(Alert.AlertType.CONFIRMATION,labelTotal.getScene().getWindow(),"Transaction is completed","Transaction Complete");
+        ordersList.clear();
+        labelTotal.setText("0.00");
+        displayOrders();
+    }
+
+    public static void showAlert(Alert.AlertType alertType, Window owner, String message, String title){
+        Alert alert = new Alert(alertType);
+        alert.setContentText(message);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.initOwner(owner);
+        alert.show();
+    }
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

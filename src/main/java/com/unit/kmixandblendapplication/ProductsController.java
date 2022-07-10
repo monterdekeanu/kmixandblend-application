@@ -233,6 +233,7 @@ public class ProductsController implements Initializable {
             System.out.println(err.getMessage());
         }
     }
+
     @FXML
     private void removeProduct(){
         Connection conn = jdbcObject.getConnection();

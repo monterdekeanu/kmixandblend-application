@@ -9,12 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e4c0108-fba9-4582-9393-f80000cb98c5" name="Changes" comment="- Dashboard Product Generation Added (Needs proper design)">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/unit/kmixandblendapplication/Orders.java" afterDir="false" />
+    <list default="true" id="0e4c0108-fba9-4582-9393-f80000cb98c5" name="Changes" comment="- Size Selection Window Design&#10;- Centered Stage on screen&#10;To Add:&#10;- Transaction Log">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/unit/kmixandblendapplication/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unit/kmixandblendapplication/DashboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unit/kmixandblendapplication/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unit/kmixandblendapplication/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unit/kmixandblendapplication/ProductsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unit/kmixandblendapplication/ProductsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/unit/kmixandblendapplication/dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/unit/kmixandblendapplication/dashboard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/unit/kmixandblendapplication/products.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/unit/kmixandblendapplication/products.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +24,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
         <option value="CSS File" />
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -134,7 +134,18 @@
       <workItem from="1656293078332" duration="3834000" />
       <workItem from="1656380210089" duration="2316000" />
       <workItem from="1656901406018" duration="600000" />
-      <workItem from="1656984509642" duration="5403000" />
+      <workItem from="1656984509642" duration="5470000" />
+      <workItem from="1657084400793" duration="657000" />
+      <workItem from="1657112905377" duration="261000" />
+      <workItem from="1657187619889" duration="1398000" />
+      <workItem from="1657245873572" duration="3285000" />
+      <workItem from="1657258218832" duration="4066000" />
+      <workItem from="1657270220951" duration="2409000" />
+      <workItem from="1657275001953" duration="634000" />
+      <workItem from="1657356905923" duration="616000" />
+      <workItem from="1657362005551" duration="2211000" />
+      <workItem from="1657417191469" duration="887000" />
+      <workItem from="1657430248947" duration="3916000" />
     </task>
     <task id="LOCAL-00001" summary="Skeleton for KMIX App">
       <created>1653916062745</created>
@@ -213,7 +224,35 @@
       <option name="project" value="LOCAL" />
       <updated>1656224586565</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="- Button Product Generation added&#10;&#10;To Add:&#10;- Total Amount to pay&#10;- Size Selection Window&#10;- Transaction Log">
+      <created>1656993888718</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1656993888718</updated>
+    </task>
+    <task id="LOCAL-00013" summary="- Total Amount to pay added&#10;To Add:&#10;&#10;- Size Selection Window&#10;- Transaction Log">
+      <created>1657113158308</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1657113158308</updated>
+    </task>
+    <task id="LOCAL-00014" summary="- Size Selection Window&#10;To Add:&#10;- Size Selection Window Design&#10;- Transaction Log">
+      <created>1657272529802</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1657272529802</updated>
+    </task>
+    <task id="LOCAL-00015" summary="- Size Selection Window Design&#10;- Centered Stage on screen&#10;To Add:&#10;- Transaction Log">
+      <created>1657371843431</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1657371843431</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,7 +279,11 @@
     <MESSAGE value="- Product Image Added (Working on Compiler but not working on artifact)" />
     <MESSAGE value="- Product Image working&#10;&#10;Next:&#10;- Product Button Generation in Dashboard" />
     <MESSAGE value="- Dashboard Product Generation Added (Needs proper design)" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Dashboard Product Generation Added (Needs proper design)" />
+    <MESSAGE value="- Button Product Generation added&#10;&#10;To Add:&#10;- Total Amount to pay&#10;- Size Selection Window&#10;- Transaction Log" />
+    <MESSAGE value="- Total Amount to pay added&#10;To Add:&#10;&#10;- Size Selection Window&#10;- Transaction Log" />
+    <MESSAGE value="- Size Selection Window&#10;To Add:&#10;- Size Selection Window Design&#10;- Transaction Log" />
+    <MESSAGE value="- Size Selection Window Design&#10;- Centered Stage on screen&#10;To Add:&#10;- Transaction Log" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Size Selection Window Design&#10;- Centered Stage on screen&#10;To Add:&#10;- Transaction Log" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

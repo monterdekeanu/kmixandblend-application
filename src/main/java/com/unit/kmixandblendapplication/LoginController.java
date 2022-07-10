@@ -33,9 +33,11 @@ public class LoginController implements Initializable{
     public void successLoginScene(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("dashboard.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.hide();
         scene = new Scene(root);
         stage.setTitle("K - Mix And Blend | Dashboard");
         stage.setScene(scene);
+        stage.centerOnScreen();
         stage.show();
     }
     @FXML
@@ -57,13 +59,16 @@ public class LoginController implements Initializable{
         String password = txtPassword.getText();
 
         JDBCObject jdbcObject = new JDBCObject();
-
-        boolean isValidCredentials = jdbcObject.validateCredentials(username,password);
-
-        if(isValidCredentials){
-            successLoginScene(event);
-        } else{
-            infoBox("Please enter a valid login credential",null,"Failed");
+        boolean isValidCredentials;
+        try{
+            isValidCredentials = jdbcObject.validateCredentials(username,password);
+            if(isValidCredentials){
+                successLoginScene(event);
+            } else{
+                infoBox("Please enter a valid login credential",null,"Failed");
+            }
+        }catch(Exception exception){
+            showAlert(Alert.AlertType.ERROR,owner,"Database is OFFLINE","Database");
         }
 
 

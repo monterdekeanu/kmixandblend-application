@@ -55,7 +55,7 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="150.0" style="-fx-background-color: #1dd1a1;" text="CONFIRM ORDER" textFill="WHITE">
+            <Button mnemonicParsing="false" onAction="#confirmOrder" prefHeight="80.0" prefWidth="150.0" style="-fx-background-color: #1dd1a1;" text="CONFIRM ORDER" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
