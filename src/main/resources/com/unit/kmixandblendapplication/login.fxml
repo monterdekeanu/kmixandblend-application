@@ -10,13 +10,17 @@
 <?import javafx.scene.paint.LinearGradient?>
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="background" prefHeight="400.0" prefWidth="600.0" stylesheets="@styleComponents/loginStyle.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.unit.kmixandblendapplication.LoginController">
+<AnchorPane id="background" prefHeight="400.0" prefWidth="542.0" stylesheets="@styleComponents/loginStyle.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.unit.kmixandblendapplication.LoginController">
    <children>
-      <TextField fx:id="txtUser" layoutX="255.0" layoutY="200.0" prefHeight="25.0" prefWidth="250.0" />
-      <PasswordField fx:id="txtPassword" layoutX="255.0" layoutY="243.0" prefHeight="25.0" prefWidth="250.0" />
-      <Button fx:id="loginBtn" layoutX="357.0" layoutY="286.0" mnemonicParsing="false" onAction="#actionLogin" text="Login" />
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="305.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+      <TextField fx:id="txtUser" layoutX="213.0" layoutY="200.0" prefHeight="25.0" prefWidth="250.0" />
+      <PasswordField fx:id="txtPassword" layoutX="213.0" layoutY="241.0" prefHeight="25.0" prefWidth="250.0" />
+      <Button fx:id="loginBtn" layoutX="296.0" layoutY="286.0" mnemonicParsing="false" onAction="#actionLogin" prefHeight="35.0" prefWidth="84.0" style="-fx-background-color: #48dbfb;" text="LOGIN" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="271.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Icon.png" />
          </image>
