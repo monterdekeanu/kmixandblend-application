@@ -35,7 +35,7 @@ public class JDBCObject {
         try{
             Connection connection = DriverManager.getConnection(DATABASE_AZURE);
             return connection;
-        }catch(SQLException err){
+        }catch(SQLException err){//
             printSQLException(err);
         }
         return null;

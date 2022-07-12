@@ -237,7 +237,7 @@ public class ProductsController implements Initializable {
     @FXML
     private void removeProduct(){
         Connection conn = jdbcObject.getConnection();
-        try{
+        try{//
             Products product = tableProducts.getSelectionModel().getSelectedItem();
             String query = "DELETE FROM tblProducts" + " WHERE id = '"+product.getId()+"'";
             executeQuery(query);
