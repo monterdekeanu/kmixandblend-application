@@ -141,7 +141,7 @@ public class ProductsController implements Initializable {
         String productSize = txtsize.getText();
         double productPrice = Double.parseDouble(txtprice.getText());
         if(!productSize.isEmpty() && productPrice >= 0.0){
-            String query = "INSERT INTO `" + txtProductName.getText() + "` (size,price) VALUES ('" +productSize +"','" +productPrice+"')";
+            String query = "INSERT INTO " + txtProductName.getText() + " (size,price) VALUES ('" +productSize +"','" +productPrice+"')";
             executeQuery(query);
         }
         showProductSize();
@@ -153,10 +153,10 @@ public class ProductsController implements Initializable {
         String productName = txtProductName.getText();
         String productType = cbProductType.getValue().toString();
         if(!productName.isEmpty() && !productType.isEmpty()){
-            String query = "INSERT INTO `tblProducts` (productType,productName) VALUES('"+productType+"','"+ productName+"')";
+            String query = "INSERT INTO [dbo].[tblproducts](productType,productName) VALUES('"+productType+"','"+ productName+"')";
             executeQuery(query);
             try{
-                query = "CREATE TABLE " + productName +"(id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY, size VARCHAR(30) NOT NULL, price DOUBLE(40,2) NOT NULL)";
+                query = "CREATE TABLE " + productName +"(id INT IDENTITY(1,1) PRIMARY KEY, size VARCHAR(30) NOT NULL, price DOUBLE PRECISION NOT NULL)";
                 executeQuery(query);
             }catch(Exception ex){
                 System.out.println("TABLE CREATION Failed");

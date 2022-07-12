@@ -6,12 +6,14 @@ public class JDBCObject {
     private static final String DATABASE_URL ="jdbc:mysql://localhost:3306/kmixdatabase?useSSL=false";
     private static final String DATABASE_USERNAME = "root";
     private static final String DATABASE_PASSWORD = "";
+
+    private static final String DATABASE_AZURE = "jdbc:sqlserver://kmix.database.windows.net:1433;database=kmixdb;user=kmixadmin@kmix;password=Lordjuke3231;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;";
     private static final String SELECT_QUERY = "SELECT * FROM logincredentials WHERE adminID = ? AND adminPassword = ?";
 
     public boolean validateCredentials(String username, String password){
         //establish connection
         try{
-            Connection connection = DriverManager.getConnection(DATABASE_URL,DATABASE_USERNAME,DATABASE_PASSWORD);
+            Connection connection = DriverManager.getConnection(DATABASE_AZURE); // CHANGE THIS FOR DATABASE
             //create statements
             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_QUERY);
             preparedStatement.setString(1,username);
@@ -31,7 +33,7 @@ public class JDBCObject {
 
     public Connection getConnection(){
         try{
-            Connection connection = DriverManager.getConnection(DATABASE_URL,DATABASE_USERNAME,DATABASE_PASSWORD);
+            Connection connection = DriverManager.getConnection(DATABASE_AZURE);
             return connection;
         }catch(SQLException err){
             printSQLException(err);

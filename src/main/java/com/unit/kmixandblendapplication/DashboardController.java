@@ -267,7 +267,7 @@ public class DashboardController implements Initializable {
         Date date = timestamp;
         for(Orders order: ordersList){
             try{
-                String query = "INSERT INTO `transaction_log` (timestamp,productName,quantity,price,total) VALUES ('"+date+"','"+order.getProductName()+"','"+order.getQuantity()+"','"+order.getPrice()+"','"+order.getTotal()+"')";
+                String query = "INSERT INTO transaction_log (timestamp,productName,quantity,price,total) VALUES ('"+date+"','"+order.getProductName()+"','"+order.getQuantity()+"','"+order.getPrice()+"','"+order.getTotal()+"')";
                 Connection connection = jdbcObject.getConnection();
                 Statement statement = connection.createStatement();
                 statement.executeUpdate(query);
