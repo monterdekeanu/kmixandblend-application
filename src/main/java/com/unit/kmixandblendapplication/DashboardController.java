@@ -92,7 +92,7 @@ public class DashboardController implements Initializable {
         Connection conn = jdbcObject.getConnection();
         Statement statement;
         ResultSet resultSet;
-        String query = "SELECT * FROM tblproducts";
+        String query = "SELECT * FROM [dbo].[tblproducts]";
         try{
             statement = conn.createStatement();
             resultSet = statement.executeQuery(query);
@@ -115,6 +115,7 @@ public class DashboardController implements Initializable {
         int row = 0;
         int column = 0;
         for(Products prod : productsArrayList){
+
             if(Objects.equals(prod.getProductType(), "DRINK")){
                 productGrid.add(generateBtn(prod.getProductName()),column,row);
                 column++;
@@ -169,7 +170,6 @@ public class DashboardController implements Initializable {
         button.setMinWidth(110);
         button.setPrefWidth(100);
         button.setAlignment(Pos.CENTER);
-
         button.setOnAction(e -> {
             try{
                 currentOrder = txtProductName.getText();
@@ -202,7 +202,7 @@ public class DashboardController implements Initializable {
             Connection conn = jdbcObject.getConnection();
             Statement statement;
             ResultSet resultSet;
-            String query = "SELECT * FROM " + productName;
+            String query = "SELECT * FROM [dbo].[" + productName +"]";
             statement = conn.createStatement();
             resultSet = statement.executeQuery(query);
             while(resultSet.next()){
@@ -261,13 +261,14 @@ public class DashboardController implements Initializable {
 
     }
 
-    private void executeOrder(){
+    private void executeOrder(){//
         JDBCObject jdbcObject = new JDBCObject();
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
         Date date = timestamp;
         for(Orders order: ordersList){
             try{
-                String query = "INSERT INTO `transaction_log` (timestamp,productName,quantity,price,total) VALUES ('"+date+"','"+order.getProductName()+"','"+order.getQuantity()+"','"+order.getPrice()+"','"+order.getTotal()+"')";
+                System.out.println(date);
+                String query = "INSERT INTO [dbo].[transaction_log](timestamp,productName,quantity,price,total) VALUES('"+date+"','"+order.getProductName()+"','"+order.getQuantity()+"','"+order.getPrice()+"','"+order.getTotal()+"')";
                 Connection connection = jdbcObject.getConnection();
                 Statement statement = connection.createStatement();
                 statement.executeUpdate(query);

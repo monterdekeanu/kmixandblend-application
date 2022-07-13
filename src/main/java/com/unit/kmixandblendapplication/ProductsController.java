@@ -141,7 +141,7 @@ public class ProductsController implements Initializable {
         String productSize = txtsize.getText();
         double productPrice = Double.parseDouble(txtprice.getText());
         if(!productSize.isEmpty() && productPrice >= 0.0){
-            String query = "INSERT INTO `" + txtProductName.getText() + "` (size,price) VALUES ('" +productSize +"','" +productPrice+"')";
+            String query = "INSERT INTO [dbo].[" + txtProductName.getText() + "] (size,price) VALUES ('" +productSize +"','" +productPrice+"')";
             executeQuery(query);
         }
         showProductSize();
@@ -153,10 +153,10 @@ public class ProductsController implements Initializable {
         String productName = txtProductName.getText();
         String productType = cbProductType.getValue().toString();
         if(!productName.isEmpty() && !productType.isEmpty()){
-            String query = "INSERT INTO `tblProducts` (productType,productName) VALUES('"+productType+"','"+ productName+"')";
+            String query = "INSERT INTO [dbo].[tblproducts](productType,productName) VALUES('"+productType+"','"+ productName+"')";
             executeQuery(query);
             try{
-                query = "CREATE TABLE " + productName +"(id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY, size VARCHAR(30) NOT NULL, price DOUBLE(40,2) NOT NULL)";
+                query = "CREATE TABLE " + productName +"(id INT IDENTITY(1,1) PRIMARY KEY, size VARCHAR(30) NOT NULL, price DOUBLE PRECISION NOT NULL)";
                 executeQuery(query);
             }catch(Exception ex){
                 System.out.println("TABLE CREATION Failed");
@@ -224,9 +224,7 @@ public class ProductsController implements Initializable {
         Connection conn = jdbcObject.getConnection();
         try{
             ProductSize productSize = tableSize.getSelectionModel().getSelectedItem();
-            String query = "DELETE FROM " + txtProductName.getText() + " WHERE id = '"+productSize.getId()+"'";
-            executeQuery(query);
-            query = "ALTER TABLE "+txtProductName.getText()+" AUTO_INCREMENT = 1";
+            String query = "DELETE FROM [dbo].[" + txtProductName.getText() + "] WHERE id = '"+productSize.getId()+"'";
             executeQuery(query);
             showProductSize();
         }catch(Exception err){
@@ -237,13 +235,11 @@ public class ProductsController implements Initializable {
     @FXML
     private void removeProduct(){
         Connection conn = jdbcObject.getConnection();
-        try{
+        try{//
             Products product = tableProducts.getSelectionModel().getSelectedItem();
-            String query = "DELETE FROM tblProducts" + " WHERE id = '"+product.getId()+"'";
+            String query = "DELETE FROM [dbo].[tblproducts]" + " WHERE id = '"+product.getId()+"'";
             executeQuery(query);
             query = "DROP TABLE "+ product.getProductName();
-            executeQuery(query);
-            query = "ALTER TABLE tblProducts AUTO_INCREMENT = 1";
             executeQuery(query);
             showProducts();
         }catch(Exception ex){
@@ -257,8 +253,9 @@ public class ProductsController implements Initializable {
         if(!txtprice.getText().isEmpty() && !txtsize.getText().isEmpty()){
             try{
                 ProductSize productSize = tableSize.getSelectionModel().getSelectedItem();
-                String query = "UPDATE " + txtProductName.getText() + " SET size = '" + txtsize.getText()+"', price = '" + txtprice.getText() + "' WHERE id = '" +productSize.getId()+"'" ;
+                String query = "UPDATE [dbo].[" + txtProductName.getText() + "] SET size = '" + txtsize.getText()+"', price = '" + txtprice.getText() + "' WHERE id = '" +productSize.getId()+"'" ;
                 executeQuery(query);
+
                 showProductSize();
             }catch(Exception exception){
                 System.out.println(exception.getMessage());
@@ -272,10 +269,12 @@ public class ProductsController implements Initializable {
         if(!txtProductName.getText().isEmpty() && !cbProductType.getValue().toString().isEmpty()){
             try{
                 Products product = tableProducts.getSelectionModel().getSelectedItem();
-                String query = "UPDATE tblProducts SET productType =  '"+cbProductType.getValue().toString()+"',productName = '"+txtProductName.getText()+"' "+" WHERE id = '"+product.getId()+"'";
+                String query = "UPDATE [dbo].[tblproducts] SET productType =  '"+cbProductType.getValue().toString()+"',productName = '"+txtProductName.getText()+"' "+" WHERE id = '"+product.getId()+"'";
                 executeQuery(query);
                 if(!Objects.equals(product.getProductName(), txtProductName.getText())){
-                    query = "RENAME TABLE "+ product.getProductName() + " TO " + txtProductName.getText();
+                    query = "DROP TABLE [dbo].["+ product.getProductName() + "]";
+                    executeQuery(query);
+                    query = "CREATE TABLE " + txtProductName.getText()+"(id INT IDENTITY(1,1) PRIMARY KEY, size VARCHAR(30) NOT NULL, price DOUBLE PRECISION NOT NULL)";
                     executeQuery(query);
                 }
                 showProducts();
