@@ -92,7 +92,7 @@ public class DashboardController implements Initializable {
         Connection conn = jdbcObject.getConnection();
         Statement statement;
         ResultSet resultSet;
-        String query = "SELECT * FROM tblproducts";
+        String query = "SELECT * FROM [dbo].[tblproducts]";
         try{
             statement = conn.createStatement();
             resultSet = statement.executeQuery(query);
@@ -104,6 +104,7 @@ public class DashboardController implements Initializable {
         }catch(Exception ex){
             System.out.println("Error in retrieving products: " +ex.getMessage());
         }
+        System.out.println(productList);
         return productList;
     }
 
@@ -202,7 +203,7 @@ public class DashboardController implements Initializable {
             Connection conn = jdbcObject.getConnection();
             Statement statement;
             ResultSet resultSet;
-            String query = "SELECT * FROM " + productName;
+            String query = "SELECT * FROM [dbo].[" + productName + "]";
             statement = conn.createStatement();
             resultSet = statement.executeQuery(query);
             while(resultSet.next()){
@@ -267,7 +268,7 @@ public class DashboardController implements Initializable {
         Date date = timestamp;
         for(Orders order: ordersList){
             try{
-                String query = "INSERT INTO transaction_log (timestamp,productName,quantity,price,total) VALUES ('"+date+"','"+order.getProductName()+"','"+order.getQuantity()+"','"+order.getPrice()+"','"+order.getTotal()+"')";
+                String query = "INSERT INTO [dbo].[transaction_log] (timestamp,productName,quantity,price,total) VALUES ('"+date+"','"+order.getProductName()+"','"+order.getQuantity()+"','"+order.getPrice()+"','"+order.getTotal()+"')";
                 Connection connection = jdbcObject.getConnection();
                 Statement statement = connection.createStatement();
                 statement.executeUpdate(query);

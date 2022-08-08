@@ -11,9 +11,9 @@
   <component name="ChangeListManager">
     <list default="true" id="0e4c0108-fba9-4582-9393-f80000cb98c5" name="Changes" comment="- Migrating local database to microsoft azure">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/unit/kmixandblendapplication/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unit/kmixandblendapplication/DashboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/unit/kmixandblendapplication/JDBCObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unit/kmixandblendapplication/JDBCObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/unit/kmixandblendapplication/ProductsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unit/kmixandblendapplication/ProductsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +52,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_directory_selection": "C:/Users/user/IdeaProjects/kmixandblendApplication/src/main/resources/com/unit/kmixandblendapplication",
-    "last_opened_file_path": "C:/Users/user/Documents/jdbc/sqljdbc_7.4/enu/mssql-jdbc-7.4.1.jre11.jar",
+    "last_opened_file_path": "C:/Users/user/Documents/Java Libraries/New folder/sqljdbc_7.2/enu/mssql-jdbc-7.2.2.jre11.jar",
     "list.type.of.created.stylesheet": "CSS",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
@@ -148,6 +148,10 @@
       <workItem from="1657509210133" duration="618000" />
       <workItem from="1657516311648" duration="1526000" />
       <workItem from="1657607682954" duration="7008000" />
+      <workItem from="1657698062873" duration="70000" />
+      <workItem from="1659159439360" duration="272000" />
+      <workItem from="1659174908576" duration="83000" />
+      <workItem from="1659924123085" duration="2432000" />
     </task>
     <task id="LOCAL-00001" summary="Skeleton for KMIX App">
       <created>1653916062745</created>
